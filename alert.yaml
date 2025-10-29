@@ -3,7 +3,7 @@ apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Provider
 metadata:
   name: msteams
-  namespace: default
+  namespace: flux-system
 spec:
   type: msteams
   secretRef:
@@ -13,7 +13,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: msteams-webhook
-  namespace: default
+  namespace: flux-system
 stringData:
   address: "https://default3bfeb222e42c4535aaceea6f775136.9b.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/cc79151b4d6e44638b0e5fc9698bdc11/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PuGafXUCzDvMpz_4q7mMeCP8Ezr1Q1_Fec66ixO15-Q"
 ---
@@ -21,7 +21,7 @@ apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
   name: tdm-alerts
-  namespace: deafult
+  namespace: flux-system
 spec:
   eventSeverity: info
   eventSources:
